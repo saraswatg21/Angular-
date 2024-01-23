@@ -1,0 +1,32 @@
+<div class="header">
+  <h1>Result Management System</h1>
+  <button class="btn btn-sm btn-danger mt-1 ml-2" (click)="logout()">Logout</button>
+</div>
+
+<div class="container">
+  <!-- <h4 style="margin-top: 80px; text-align: center;">Total {{data.length}} Students </h4> -->
+  <table class="table table-success table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Roll No.</th>
+        <th scope="col">Name</th>
+        <th scope="col">Data of Birth</th>
+        <th scope="col">Score</th>
+        <th scope="col"> Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data" class="table-info">
+        <td>{{item.rollno}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.dob}}</td>
+        <td>{{item.score}}</td>
+        <td>
+          <button type="button" class="btn btn-primary" [routerLink]="['add',item.rollno]" >Edit</button>
+          <button type="button" class="btn btn-danger" (click)="deleteID(item.rollno)">Delete</button>
+        </td>
+      </tr>
+  </table>
+
+  <button type="button" class="btn btn-warning" [routerLink]="['add']">Add Record</button>
+</div>

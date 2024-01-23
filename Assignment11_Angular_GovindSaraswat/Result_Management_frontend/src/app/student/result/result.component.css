@@ -1,0 +1,12 @@
+.header {
+  background-color: #7fff00;
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+table {
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 40px;
+}

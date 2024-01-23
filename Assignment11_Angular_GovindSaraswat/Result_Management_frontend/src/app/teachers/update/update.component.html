@@ -1,0 +1,33 @@
+<div class="header">
+    <h1>Result Management System</h1>
+</div>
+
+<!-- <button (click)="userUpdate()">Update</button> -->
+
+<form [formGroup]="userForm">
+    <h4 style="margin-top: 40px; margin-bottom: 20px; text-align: center;">Add New Result</h4>
+    <div *ngIf="errmsgshow">
+        <p class="text-danger">{{ errormsg }}</p>
+    </div>
+    <div *ngIf="succmsgshow">
+        <p class="text-success">{{ successmsg }}</p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Roll No.</label>
+        <input type="number" class="form-control" formControlName="rollno">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" formControlName="name">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Date of Birth</label>
+        <input type="date" class="form-control" formControlName="dob">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Score</label>
+        <input type="number" class="form-control" formControlName="score">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="userUpdate()">Update</button>
+    <input class="btn btn-danger" style="margin-left: 10px;" type="reset" value="Clear">
+</form>
